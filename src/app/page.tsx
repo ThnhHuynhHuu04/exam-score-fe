@@ -33,12 +33,11 @@ export default function Home() {
       const res = await axiosInstance.get(`/score/${candidateId}`);
       setResult(res.data);
     } catch (err) {
-      setError("Not found or error occurred.");
+      setError("Not found or error occurred." + err);
     } finally {
       setLoading(false);
     }
   };
-
 
   return (
     <div className="flex flex-col items-start justify-start p-10 min-h-screen bg-[#F8FAFC] ">

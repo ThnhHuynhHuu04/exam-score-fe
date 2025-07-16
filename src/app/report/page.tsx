@@ -12,9 +12,8 @@ import {
   YAxis,
 } from "recharts";
 import CardContainer from "@/components/layout/CardContainer";
-import { ChartBarStacked } from "lucide-react";
 
-export default function page() {
+export default function ReportPage() {
   const [stat, setStat] = useState();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -45,6 +44,7 @@ export default function page() {
         <h1 className="text-3xl font-bold mb-6"> Thống kê điểm thi</h1>
       </CardContainer>
       <CardContainer>
+        {error && <div className="text-red-500">{error}</div>}
         <ResponsiveContainer width="100%" height={500}>
           <BarChart
             data={stat}
