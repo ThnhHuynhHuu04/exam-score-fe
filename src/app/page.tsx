@@ -1,3 +1,4 @@
+import CardContainer from "@/components/layout/CardContainer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -13,7 +14,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white w-full p-6 mt-6 rounded-lg shadow-lg">
+      <CardContainer>
         <h1 className="text-2xl font-bold text-gray-800 mb-4">
           Thông tin thí sinh
         </h1>
@@ -29,7 +30,7 @@ export default function Home() {
           />
           <Button className="whitespace-nowrap">Tra cứu điểm</Button>
         </div>
-      </div>
+      </CardContainer>
     </div>
   );
 }

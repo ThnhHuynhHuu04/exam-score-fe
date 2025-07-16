@@ -16,7 +16,7 @@ import {
 const items = [
   {
     title: "Trang chủ",
-    url: "#",
+    url: "/",
     icon: Home,
   },
   // {
@@ -31,7 +31,7 @@ const items = [
   },
   {
     title: "Top học sinh",
-    url: "#",
+    url: "/top",
     icon: Award,
   },
 ];
