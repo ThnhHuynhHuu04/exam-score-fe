@@ -15,94 +15,29 @@ import CardContainer from "@/components/layout/CardContainer";
 import { ChartBarStacked } from "lucide-react";
 
 export default function page() {
-  //   const [stat, setStat] = useState();
-  //   const [loading, setLoading] = useState(false);
-  //   const [error, setError] = useState("");
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       setLoading(true);
-  //       try {
-  //         const response = await axiosInstance.get("/score-stat");
-  //         setStat(response.data);
-  //       } catch (error) {
-  //         setError("Không tìm thấy kết quả hoặc có lỗi khi tra cứu.");
-  //       } finally {
-  //         setLoading(false);
-  //       }
-  //     };
+  const [stat, setStat] = useState();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await axiosInstance.get("/score-stat");
+        setStat(response.data);
+      } catch (error) {
+        setError("Không tìm thấy kết quả hoặc có lỗi khi tra cứu.");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  //     fetchData();
-  //   }, []);
-  //   console.log(stat);
+    fetchData();
+  }, []);
+  console.log(stat);
 
-  //   if (loading) {
-  //     return <div>Loading...</div>;
-  //   }
-  const stat = [
-    {
-      subject: "math",
-      levelAbove8: 198392,
-      level6To8: 505836,
-      level4To6: 258654,
-      levelBelow4: 82731,
-    },
-    {
-      subject: "literature",
-      levelAbove8: 377879,
-      level6To8: 513116,
-      level4To6: 141056,
-      levelBelow4: 18050,
-    },
-    {
-      subject: "foreign_language",
-      levelAbove8: 133483,
-      level6To8: 219652,
-      level4To6: 363532,
-      levelBelow4: 196038,
-    },
-    {
-      subject: "physics",
-      levelAbove8: 94146,
-      level6To8: 148641,
-      level4To6: 79272,
-      levelBelow4: 23556,
-    },
-    {
-      subject: "chemistry",
-      levelAbove8: 93333,
-      level6To8: 144959,
-      level4To6: 88447,
-      levelBelow4: 19779,
-    },
-    {
-      subject: "biology",
-      levelAbove8: 34438,
-      level6To8: 182049,
-      level4To6: 116263,
-      levelBelow4: 9628,
-    },
-    {
-      subject: "history",
-      levelAbove8: 138533,
-      level6To8: 342577,
-      level4To6: 200392,
-      levelBelow4: 24712,
-    },
-    {
-      subject: "geography",
-      levelAbove8: 218515,
-      level6To8: 382087,
-      level4To6: 96226,
-      levelBelow4: 7854,
-    },
-    {
-      subject: "civic_education",
-      levelAbove8: 384222,
-      level6To8: 181440,
-      level4To6: 16886,
-      levelBelow4: 1061,
-    },
-  ];
+  if (loading) {
+    return <div>Đang tải...</div>;
+  }
 
   return (
     <PageContainer>
