@@ -1,4 +1,4 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
+import { Home, Search, BarChart2, Award } from "lucide-react";
 
 import {
   Sidebar,
@@ -6,46 +6,46 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
 // Menu items.
 const items = [
   {
-    title: "Home",
+    title: "Trang chủ",
     url: "#",
     icon: Home,
   },
+  // {
+  //   title: "Tra cứu điểm",
+  //   url: "#",
+  //   icon: Search,
+  // },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Báo cáo",
+    url: "/report",
+    icon: BarChart2,
   },
   {
-    title: "Calendar",
+    title: "Top học sinh",
     url: "#",
-    icon: Calendar,
+    icon: Award,
   },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-]
+];
 
 export function AppSidebar() {
   return (
-    <Sidebar>
+    <Sidebar >
+      <SidebarHeader>
+        <div className="justify-center text-black text-2xl font-semibold font-['Inter'] leading-normal">
+          THPT 2024
+        </div>
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
@@ -63,5 +63,5 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
-  )
+  );
 }
