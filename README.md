@@ -1,6 +1,7 @@
 # Exam Score FE
 
 > Giao diện tra cứu, thống kê điểm thi tốt nghiệp THPT sử dụng Next.js, TypeScript, Tailwind CSS và Recharts.
+ [https://exam-score-fe.vercel.app/](https://exam-score-fe.vercel.app/)
 
 ## 🚀 Tính năng
 
@@ -60,11 +61,14 @@ public/                 // Ảnh, icon
    yarn dev
    ```
 5. **Truy cập:**
-   - Mở [http://localhost:3000](http://localhost:3000)
+   - Local: [http://localhost:3000](http://localhost:3000)
+   - Production: [https://exam-score-fe.vercel.app/](https://exam-score-fe.vercel.app/)
 
 ## 📝 Ghi chú
 
-- Đảm bảo backend API cho phép CORS với domain frontend.
+- Đảm bảo backend API cho phép CORS với domain frontend:
+  - http://localhost:3000
+  - https://exam-score-fe.vercel.app/
 - Có thể chỉnh sửa style trong `tailwind.config.ts` và các component trong `src/components/`.
 - Để build production: `npm run build` và `npm start`.
 
