@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Exam Score FE
 
-## Getting Started
+> Giao diện tra cứu, thống kê điểm thi tốt nghiệp THPT sử dụng Next.js, TypeScript, Tailwind CSS và Recharts.
 
-First, run the development server:
+## 🚀 Tính năng
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Tra cứu điểm thi theo số báo danh
+- Xem bảng xếp hạng top thí sinh theo khối, số lượng
+- Thống kê điểm theo môn, hiển thị biểu đồ cột (BarChart)
+- Giao diện hiện đại, responsive, dễ sử dụng
+- Tích hợp API backend qua Axios
+
+## 🛠️ Công nghệ sử dụng
+
+- [Next.js 14+ (App Router)](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Recharts](https://recharts.org/) (vẽ biểu đồ)
+- [Axios](https://axios-http.com/) (gọi API)
+
+## 📂 Cấu trúc thư mục
+
+```
+src/
+  app/
+    page.tsx           // Trang tra cứu điểm
+    top/page.tsx       // Trang top thí sinh
+    report/page.tsx    // Trang thống kê, biểu đồ
+  components/
+    layout/            // CardContainer, PageContainer, Header...
+    ui/                // Sidebar, Button, Input...
+  lib/
+    axiosInstance.ts   // Cấu hình axios
+  hooks/               // Custom hooks
+public/                 // Ảnh, icon
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚡ Hướng dẫn cài đặt & phát triển
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone repo:**
+   ```bash
+   git clone <repo-url>
+   cd exam-score-fe
+   ```
+2. **Cài đặt dependencies:**
+   ```bash
+   npm install
+   # hoặc
+   yarn install
+   ```
+3. **Cấu hình biến môi trường:**
+   - Tạo file `.env.local` và thêm biến:
+     ```env
+     NEXT_PUBLIC_API_BASE_URL=http://localhost:8080
+     ```
+4. **Chạy dev:**
+   ```bash
+   npm run dev
+   # hoặc
+   yarn dev
+   ```
+5. **Truy cập:**
+   - Mở [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📝 Ghi chú
 
-## Learn More
+- Đảm bảo backend API cho phép CORS với domain frontend.
+- Có thể chỉnh sửa style trong `tailwind.config.ts` và các component trong `src/components/`.
+- Để build production: `npm run build` và `npm start`.
 
-To learn more about Next.js, take a look at the following resources:
+## 📊 Demo tính năng
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Tra cứu điểm: nhập SBD, xem kết quả chi tiết.
+- Top thí sinh: chọn khối, số lượng, xem bảng xếp hạng.
+- Thống kê: xem biểu đồ số lượng thí sinh theo từng mức điểm/môn.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📬 Liên hệ & đóng góp
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Tác giả: [ThnhHuynhHuu04](https://github.com/ThnhHuynhHuu04)
+- Đóng góp, báo lỗi: tạo issue hoặc pull request trên GitHub repo này.
