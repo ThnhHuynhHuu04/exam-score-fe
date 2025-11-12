@@ -1,0 +1,11 @@
+{
+  "page": {
+    "title": "Thông tin thí sinh",
+    "candidateId": "Số báo danh",
+    "candidateIdPlaceholder": "Nhập số báo danh",
+    "searchButton": "Tra cứu điểm",
+    "scoreTable": "📄 Bảng điểm THPT",
+    "foreignId": "Mã Ngoại Ngữ",
+    "regNumber": "SBD"
+  }
+}

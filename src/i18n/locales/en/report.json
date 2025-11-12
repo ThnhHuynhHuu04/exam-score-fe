@@ -1,0 +1,11 @@
+{
+  "page": {
+    "title": "Score Statistics",
+    "chart": {
+      "above8": "Above 8",
+      "from6to8": "6 to 8",
+      "from4to6": "4 to 6",
+      "below4": "Below 4"
+    }
+  }
+}

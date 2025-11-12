@@ -1,0 +1,11 @@
+{
+  "page": {
+    "title": "Thống kê điểm thi",
+    "chart": {
+      "above8": "Trên 8",
+      "from6to8": "Từ 6 đến 8",
+      "from4to6": "Từ 4 đến 6",
+      "below4": "Dưới 4"
+    }
+  }
+}

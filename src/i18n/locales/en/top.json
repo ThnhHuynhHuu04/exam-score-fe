@@ -1,0 +1,11 @@
+{
+  "page": {
+    "title": "Top Outstanding Students",
+    "limit": "Limit",
+    "group": "Group",
+    "results": "Search Results",
+    "noResults": "No results found.",
+    "regNumber": "Reg. No.",
+    "totalScore": "Total Score"
+  }
+}

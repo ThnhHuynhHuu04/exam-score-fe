@@ -1,12 +1,21 @@
-import { AppSidebar } from "@/components/ui/appsidebar";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import "./globals.css";
-import Header from "@/components/layout/Header";
+import { ReactNode } from 'react';import { AppSidebar } from "@/components/ui/appsidebar";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+import { SidebarProvider } from "@/components/ui/sidebar";
+
+export default function RootLayout({import "./globals.css";
+
+  children,import Header from "@/components/layout/Header";
+
+}: {
+
+  children: ReactNode;export default function RootLayout({
+
+}) {  children,
+
+  return children;}: Readonly<{
+
+}  children: React.ReactNode;
+
 }>) {
   return (
     <html lang="en">

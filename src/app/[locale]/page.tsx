@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import axiosInstance from "@/lib/axiosInstance";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 type ScoreResult = {
   regNumber: string;
@@ -20,6 +21,10 @@ type ScoreResult = {
 };
 
 export default function Home() {
+  const t = useTranslations("page");
+  const tCommon = useTranslations("app");
+  const tSubjects = useTranslations("subjects");
+
   const [candidateId, setCandidateId] = useState("");
   const [result, setResult] = useState<ScoreResult | null>(null);
   const [loading, setLoading] = useState(false);
@@ -33,7 +38,7 @@ export default function Home() {
       const res = await axiosInstance.get(`/score/${candidateId}`);
       setResult(res.data);
     } catch (err) {
-      setError("Not found or error occurred." + err);
+      setError(tCommon("notFoundOrError") + err);
     } finally {
       setLoading(false);
     }
@@ -43,25 +48,23 @@ export default function Home() {
     <div className="flex flex-col items-start justify-start p-10 min-h-screen bg-[#F8FAFC] ">
       <div className="flex flex-col bg-[#3A81F5] text-white w-full p-6 rounded-lg shadow-lg">
         <div className="justify-start text-white text-2xl font-bold font-['Inter'] leading-loose">
-          Chào mừng đến với hệ thống quản lý điểm thi THPT
+          {tCommon("welcome")}
         </div>
         <div className="justify-start text-blue-200 text-lg font-normal font-['Inter'] leading-7">
-          Kỳ thi Trung học phổ thông Quốc gia năm 2024
+          {tCommon("subtitle")}
         </div>
       </div>
 
       <CardContainer>
-        <h1 className="text-2xl font-bold text-gray-800 mb-4">
-          Thông tin thí sinh
-        </h1>
+        <h1 className="text-2xl font-bold text-gray-800 mb-4">{t("title")}</h1>
 
         <span className="text-lg font-semibold text-gray-700">
-          Số báo danh:
+          {t("candidateId")}:
         </span>
         <div className="flex items-start gap-4 mt-2 mb-4 w-full max-w-md">
           <Input
             type="text"
-            placeholder="Nhập số báo danh"
+            placeholder={t("candidateIdPlaceholder")}
             className="flex-1"
             value={candidateId}
             onChange={(e) => setCandidateId(e.target.value)}
@@ -71,7 +74,7 @@ export default function Home() {
             onClick={handleSearch}
             disabled={loading || !candidateId}
           >
-            {loading ? "Đang tìm kiếm..." : "Tra cứu điểm"}
+            {loading ? tCommon("searching") : t("searchButton")}
           </Button>
         </div>
         {error && <div className="text-red-500 mt-2">{error}</div>}
@@ -79,23 +82,27 @@ export default function Home() {
       {result && (
         <CardContainer>
           <h2 className="text-2xl font-bold text-blue-600 mb-4">
-            📄 Bảng điểm THPT
+            {t("scoreTable")}
           </h2>
 
           <table className="min-w-full text-sm text-center text-gray-800 border">
             <thead className="bg-gray-100">
               <tr>
-                <th className="px-3 py-2 border">SBD</th>
-                <th className="px-3 py-2 border">Toán</th>
-                <th className="px-3 py-2 border">Ngữ văn</th>
-                <th className="px-3 py-2 border">Ngoại ngữ</th>
-                <th className="px-3 py-2 border">Vật lý</th>
-                <th className="px-3 py-2 border">Hóa học</th>
-                <th className="px-3 py-2 border">Sinh học</th>
-                <th className="px-3 py-2 border">Lịch sử</th>
-                <th className="px-3 py-2 border">Địa lý</th>
-                <th className="px-3 py-2 border">GDCD</th>
-                <th className="px-3 py-2 border">Mã Ngoại Ngữ</th>
+                <th className="px-3 py-2 border">{t("regNumber")}</th>
+                <th className="px-3 py-2 border">{tSubjects("math")}</th>
+                <th className="px-3 py-2 border">{tSubjects("literature")}</th>
+                <th className="px-3 py-2 border">
+                  {tSubjects("foreignLanguage")}
+                </th>
+                <th className="px-3 py-2 border">{tSubjects("physics")}</th>
+                <th className="px-3 py-2 border">{tSubjects("chemistry")}</th>
+                <th className="px-3 py-2 border">{tSubjects("biology")}</th>
+                <th className="px-3 py-2 border">{tSubjects("history")}</th>
+                <th className="px-3 py-2 border">{tSubjects("geography")}</th>
+                <th className="px-3 py-2 border">
+                  {tSubjects("civicEducation")}
+                </th>
+                <th className="px-3 py-2 border">{t("foreignId")}</th>
               </tr>
             </thead>
             <tbody>

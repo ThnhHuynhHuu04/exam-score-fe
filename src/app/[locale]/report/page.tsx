@@ -12,8 +12,13 @@ import {
   YAxis,
 } from "recharts";
 import CardContainer from "@/components/layout/CardContainer";
+import { useTranslations } from "next-intl";
 
 export default function ReportPage() {
+  const t = useTranslations("page");
+  const tChart = useTranslations("page.chart");
+  const tCommon = useTranslations("app");
+
   const [stat, setStat] = useState();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -23,25 +28,25 @@ export default function ReportPage() {
       try {
         const response = await axiosInstance.get("/score-stat");
         setStat(response.data);
-      } catch (error) {
-        setError("Không tìm thấy kết quả hoặc có lỗi khi tra cứu.");
+      } catch {
+        setError(tCommon("notFound"));
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-  }, []);
+  }, [tCommon]);
   console.log(stat);
 
   if (loading) {
-    return <div>Đang tải...</div>;
+    return <div>{tCommon("loading")}</div>;
   }
 
   return (
     <PageContainer>
       <CardContainer className="flex-row">
-        <h1 className="text-3xl font-bold mb-6"> Thống kê điểm thi</h1>
+        <h1 className="text-3xl font-bold mb-6">{t("title")}</h1>
       </CardContainer>
       <CardContainer>
         {error && <div className="text-red-500">{error}</div>}
@@ -68,25 +73,25 @@ export default function ReportPage() {
               dataKey="levelAbove8"
               stackId="a"
               fill="#4caf50"
-              name="Trên 8"
+              name={tChart("above8")}
             />
             <Bar
               dataKey="level6To8"
               stackId="a"
               fill="#2196f3"
-              name="Từ 6 đến 8"
+              name={tChart("from6to8")}
             />
             <Bar
               dataKey="level4To6"
               stackId="a"
               fill="#ffc107"
-              name="Từ 4 đến 6"
+              name={tChart("from4to6")}
             />
             <Bar
               dataKey="levelBelow4"
               stackId="a"
               fill="#f44336"
-              name="Dưới 4"
+              name={tChart("below4")}
             />
           </BarChart>
         </ResponsiveContainer>

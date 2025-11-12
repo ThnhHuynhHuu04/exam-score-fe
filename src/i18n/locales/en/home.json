@@ -1,0 +1,11 @@
+{
+  "page": {
+    "title": "Candidate Information",
+    "candidateId": "Registration Number",
+    "candidateIdPlaceholder": "Enter registration number",
+    "searchButton": "Check Score",
+    "scoreTable": "📄 High School Score Report",
+    "foreignId": "Foreign Language Code",
+    "regNumber": "Reg. No."
+  }
+}

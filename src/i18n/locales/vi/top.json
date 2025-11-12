@@ -1,0 +1,11 @@
+{
+  "page": {
+    "title": "Danh sách những học sinh xuất sắc nhất",
+    "limit": "Số lượng",
+    "group": "Khối",
+    "results": "Kết quả tìm kiếm",
+    "noResults": "Không tìm thấy kết quả nào.",
+    "regNumber": "SBD",
+    "totalScore": "Tổng điểm"
+  }
+}

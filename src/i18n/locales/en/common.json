@@ -1,0 +1,23 @@
+{
+  "app": {
+    "title": "Exam Score",
+    "subtitle": "National High School Exam 2024",
+    "welcome": "Welcome to the High School Exam Score Management System",
+    "loading": "Loading...",
+    "searching": "Searching...",
+    "search": "Search",
+    "notFound": "No results found or an error occurred.",
+    "notFoundOrError": "Not found or error occurred."
+  },
+  "subjects": {
+    "math": "Mathematics",
+    "literature": "Literature",
+    "foreignLanguage": "Foreign Language",
+    "physics": "Physics",
+    "chemistry": "Chemistry",
+    "biology": "Biology",
+    "history": "History",
+    "geography": "Geography",
+    "civicEducation": "Civic Education"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "app": {
+    "title": "Exam Score",
+    "subtitle": "Kỳ thi THPT Quốc gia 2024",
+    "welcome": "Chào mừng đến với hệ thống quản lý điểm thi THPT",
+    "loading": "Đang tải...",
+    "searching": "Đang tìm kiếm...",
+    "search": "Tìm kiếm",
+    "notFound": "Không tìm thấy kết quả hoặc có lỗi khi tra cứu.",
+    "notFoundOrError": "Not found or error occurred."
+  },
+  "subjects": {
+    "math": "Toán",
+    "literature": "Ngữ văn",
+    "foreignLanguage": "Ngoại ngữ",
+    "physics": "Vật lý",
+    "chemistry": "Hóa học",
+    "biology": "Sinh học",
+    "history": "Lịch sử",
+    "geography": "Địa lý",
+    "civicEducation": "GDCD"
+  }
+}
